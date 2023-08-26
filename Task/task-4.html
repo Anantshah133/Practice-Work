@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="string" onkeyup="text(this.value)">
+    <button onclick="checkUnique(string.value)">Click Me</button>
+    
+    <h2 id="old">Entered String : </h2>
+    <h2 id="new"></h2>
+    <script>
+        function text(str) {
+            document.getElementById("old").textContent = "Entered String : " + str;
+        }
+        /*----- This is old code which was working but i found better way -----*/
+        // function checkUnique(str){
+        //     var unique = {};
+        //     for(let char of str){
+        //         const key = char;
+        //         unique[char] = unique[char] ? unique[char] += 1 : 1;
+        //     }
+        //     let uniqueChar = "";
+        //     for(let char of str){
+        //         const key = char;
+        //         if(unique[key] === 1){
+        //             uniqueChar += key;
+        //         }
+        //     }
+        //     document.getElementById("new").textContent = "Unique Characters : " + uniqueChar.split(" ").join("").split("").join(", ");
+        // }
+        function checkUnique(str) {
+            var unique = {};
+            for (const char of str) {
+                unique[char] = (unique[char] || 0) + 1;
+            }
+            let output = document.getElementById("new");
+            // ...str is used to not split the string
+            var uniqueChars = [...str].filter(char => unique[char] === 1 && char !== " ");
+            if (uniqueChars.length !== 0) output.innerHTML = `These are The Unique Characters 😁 <br> (${uniqueChars.join(", ")})`;
+            else output.innerHTML = `No Unique Characters Found 😉`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="string" onkeyup="text(this.value)">
+    <button onclick="countVowel(string.value)">Click Me</button>
+    
+    <h2 id="old">Entered String : </h2>
+    <h2 id="new"></h2>
+    <script>
+        function text(str) {
+            document.getElementById("old").textContent = "Entered String : " + str;
+        }
+        function countVowel(str){
+            let vowels = "aeiouAEIOU", count = 0;
+            for(let char of str){
+                if (vowels.includes(char)){
+                    count++;
+                }
+            }
+            document.getElementById("new").innerHTML = `The Number of Vowels Avialable in String is : ${count}`;
+        }
+    </script>
+</body>
+</html>

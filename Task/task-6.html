@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="string" onkeyup="text(this.value)">
+    <button onclick="checkLongest(string.value)">Click Me</button>
+    
+    <abdullah></abdullah>
+
+    <h2 id="old">Entered String : </h2>
+    <h2 id="new"></h2>
+    <script>
+        function text(str) {
+            document.getElementById("old").textContent = "Entered String : " + str;
+        }
+        function checkLongest(str){
+            let maxLen = 0, maxLenWord = '', output = document.getElementById("new");
+            for(let word of str.split(" ")){
+                if(word.length > maxLen){
+                    maxLen = word.length;
+                    maxLenWord = word;
+                }
+            }
+            output.innerHTML = `The longest Word From String is : "${maxLenWord}"`;
+        
+        }
+    </script>
+</body>
+</html>

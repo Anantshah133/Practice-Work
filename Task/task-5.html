@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="string" onkeyup="text(this.value)">
+    <button onclick="notRepeatedCharacter(string.value)">Click Me</button>
+    
+    <h2 id="old">Entered String : </h2>
+    <h2 id="new"></h2>
+    <script>
+        function text(str) {
+            document.getElementById("old").textContent = "Entered String : " + str;
+        }
+        function notRepeatedCharacter(str){
+            let output = document.getElementById("new");
+            var charFrequency = {}, chekRepeat = false;
+            for(let char of str){
+                charFrequency[char] = (charFrequency[char] || 0) + 1;
+            }
+            for(let char of str){
+                if(charFrequency[char] === 1){
+                    chekRepeat = char;
+                    break;
+                }
+            }
+            chekRepeat ? output.innerHTML = `The First Not Repeated Character Is : "${chekRepeat}" 😁` : output.innerHTML = `There are no unique characters available.<br> Every Character is repeating !!! 🤷‍♂️`;
+        }
+    </script>
+</body>
+</html>
