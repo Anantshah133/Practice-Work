@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+    <form action="">
+        <div class="input">
+            <h1 class="fw-semibold">Number Converter</h1>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="" class="unit1 fw-bold">From : </label>
+                    <select name="sel" id="unit1" class="form-control" onchange="updateValue('unit1','demo1')">
+                        <option value="-1" selected>Select Here</option>
+                        <option value="decimal">Decimal</option>
+                        <option value="hexadecimal">Hexadecimal</option>
+                        <option value="binary">Binary</option>
+                        <option value="octal">Octal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="" class="unit2 fw-bold">To : </label>
+                    <select name="" id="unit2" class="form-control" onchange="updateValue('unit2','demo2')">
+                        <option value="-1" selected>Select Here</option>
+                        <option value="decimal">Decimal</option>
+                        <option value="hexadecimal">Hexadecimal</option>
+                        <option value="binary">Binary</option>
+                        <option value="octal">Octal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="fw-bold">Enter The <span id="demo1" class="fw-semibold"></span> Number : </label>
+                <input type="text" name="n1txt" id="n1" class="fw-semibold">
+            </div>
+            <div class="form-group">
+                <input type="button" value="Convert" class="btn-success" onclick="convert(n1txt,unit1,unit2,a1)">
+            </div>
+            <div class="form-group">
+                <label for="" class="fw-bold mt-15">Converted <span id="demo2" class="fw-semibold"></span> Number : </label>
+                <input type="text" name="a1txt" id="a1" class="fw-semibold" readonly>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
