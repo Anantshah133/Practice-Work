@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-------------------- CSS ---------------------->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+
+    <form action="">
+        <div class="container">
+
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <input type="text" name="n1" class="form-control">
+            <!-- <input type="text" name="n1" class="form-control"> -->
+            <div class="btn">
+                <button type="button" onclick="shell1(n1)" id="srch" class="w-100">Shell Sort</button>
+            </div>
+            <div class="div row w-100">
+                <div class="w-96">
+                    <input type="text" name="s1" id="src" class="form-control d-none w-96">
+                </div>
+                <button type="button" onclick="serch(s1,n1)" id="src1" class="w-100 d-none squ"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="btn">
+                <button type="button" onclick="clean(n1)">Clean All</button>
+                <button type="button" onclick="fill(n1)">Fill All</button>
+            </div>
+        </div>
+    </form>
+
+
+    <!-------------------- JS ---------------------->
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#srch").click(function () {
+                if ($("#src").hasClass("d-none")) {
+                    $("#src").removeClass("d-none");
+                    $("#src").addClass("d-block");
+                    $("#src1").removeClass("d-none");
+                    $("#src1").addClass("d-block");
+                } else {
+                    $("#src").addClass("d-none");
+                    $("#src").removeClass("d-block");
+                    $("#src1").addClass("d-none");
+                    $("#src1").removeClass("d-block");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
